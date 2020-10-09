@@ -1,0 +1,97 @@
+/* work
+-------------------------- */
+.work {
+	margin-top: 110px;
+	@include mq (lg) {
+		width: 90%;
+		margin: 140px auto 80px;
+	}
+	@include mq (xl) {
+		width: 60%;
+	}
+
+	// サイトタイトル
+	&_ttl_area {
+		text-align: center;
+		margin-bottom: 40px;
+		@include mq (lg) {
+			margin-bottom: 80px;
+		}
+	}
+	&_ttl {
+		position: relative;
+		display: inline-block;
+		padding: 0 30px;
+		font-size: rem(32);
+		font-weight: bold;
+		&::before {
+  			content: '';
+  			position: absolute;
+  			bottom: -15px;
+  			display: inline-block;
+  			width: 80px;
+  			height: 5px;
+  			left: 50%;
+  			transform: translateX(-50%);
+  			background-color: $color_main;
+  			border-radius: 2px;
+		}
+		@include mq (lg) {
+			font-size: rem(48);
+		}
+	}
+
+	// サイトのモックアップ画像
+	&_view {
+		margin: 0 auto;
+		@include mq (md) {
+			width: 90%;
+		}
+		@include mq (lg) {
+			width: 70%;
+		}
+	}
+
+	// サイトのリンクボタン
+	&_btn {
+		margin-top: 40px;
+		margin-bottom: 80px;
+	}
+
+	// サイトの評細
+	&_process {
+		margin-bottom: 80px;
+		padding: 0 5px;
+
+		&_txt {
+			margin-bottom: 20px;
+		}
+
+		&_ttl {
+			position: relative;
+			display: inline-block;
+			font-size: rem(20);
+			margin-bottom: 8px;
+			&::after {
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				display: inline-block;
+				content: '';
+				width: 150%;
+				height: 3px;
+				background-color: $color_main;
+			}
+			@include mq (lg) {
+				font-size: rem(24);
+			}
+		}
+	}
+
+	// サイト全体のイメージ画像
+	&_img {
+		width: 80%;
+		margin: 0 auto;
+		box-shadow: 0 0 10px $color_boxshadow;
+	}
+}

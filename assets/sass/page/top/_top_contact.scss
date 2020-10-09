@@ -1,0 +1,25 @@
+/* top_contact
+-------------------------- */
+.top_contact {
+	margin-bottom: 30px;
+	@include mq (lg) {
+		margin-bottom: 70px;
+	}
+
+	&_area {
+		padding: 30px 0;
+		border-radius: 30px;
+		@include mq (lg) {
+			padding: 60px 0;
+		}
+	}
+
+	&_txt {
+		text-align: center;
+		line-height: 2;
+		font-size: rem(16);
+		@include mq (lg) {
+			font-size: rem(20);
+		}
+	}
+}

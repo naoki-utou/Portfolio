@@ -1,0 +1,183 @@
+/* header
+-------------------------- */
+.header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	height: 70px;
+	background-color: $color_main;
+	@include mq (lg) {
+		height: 80px;	
+	}
+	&_inner {
+		padding: 0 4vw;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include mq (lg) {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+	}
+
+	//  ---------- ヘッダーロゴ ---------- //
+	&_logo {
+		margin-left: 10px;
+		padding-right: 10px;
+		@include mq (md) {
+			margin-left: 0;
+		}
+		&_txt {
+			font-family: $font_en;
+			font-size: rem(24);
+			font-weight: bold;
+			font-style: italic;
+			letter-spacing: .05em;
+			line-height: 70px;
+			color: $color_logo;
+			@include mq (md) {
+				font-size: rem(28);
+			}
+			@include mq (lg) {
+				font-size: rem(34);
+				line-height: 80px;
+			}
+		}
+	}
+
+	// ---------- ナビゲーションメニュー ---------- //
+	&_nav {
+		display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 110;
+		width: 100%;
+		height: 100vh;
+		background-color: $color_nav_bg;
+		@include mq (pc) {
+			display: block;
+			position: static;
+			width: 0;
+			height: 0;
+			background: none;
+		}
+		&.js_nav_open {
+			display: block;
+			@include mq (pc) {
+				display: none;
+			}
+		}
+
+		// メニューリスト
+		&_list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			@include mq (sp) {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				z-index: 120;
+				transform: translateY(-50%);
+			}
+			@include mq (pc) {
+				flex-direction: row;
+				margin-top: 0;
+				height: 100%;
+				justify-content: flex-end;
+			}
+		}
+
+		li {
+			margin-bottom: 40px;
+			border-bottom: 1px solid $color_nav;
+			@include mq (pc) {
+				margin-left: 50px;
+				margin-bottom: 0;
+				border: none;
+			}
+			@include mq (md) {
+				margin-left: 30px;
+			}
+
+			a {
+				color: $color_nav;
+				font-family: $font_en;
+				font-size: rem(32);
+				font-style: italic;
+				@include mq (pc) {
+					font-size: rem(24);
+					font-weight: bold;
+				}
+				@include mq (lg) {
+					position: relative;
+					display: inline-block;
+					transition: .3s;
+					&::after {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						content: '';
+						width: 0;
+						height: 2px;
+						background: $color_white;
+						transition: .3s;
+					}
+					&:hover::after {
+						width: 110%;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	// ---------- メニューアイコン ---------- //
+	&_toggle {
+		z-index: 111;
+		@include mq (pc) {
+			display: none;
+		}
+
+		// メニューアイコン - CLOSE時
+		&_icon {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 3px;
+			background-color: $color_nav;
+			transition: .25s;
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				margin: 8px 0;
+			}
+			&:nth-child(3) {
+				top: 0;
+			}
+		}
+
+		// メニューアイコン - OPEN時
+		&.js_open &_icon:nth-child(1) {
+			top: 11px;
+			transform: rotate(45deg);
+			transition: .25s;
+		}
+		&.js_open &_icon:nth-child(2) {
+			opacity: 0;
+			transition: .25s;
+		}
+		&.js_open &_icon:nth-child(3) {
+			top: -11px;
+			transform: rotate(-45deg);
+			transition: .25s;
+		}
+	}
+}

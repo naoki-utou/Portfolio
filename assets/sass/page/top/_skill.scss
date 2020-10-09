@@ -1,0 +1,58 @@
+/* skill
+-------------------------- */
+.skill {
+	// スキルリスト
+	&_list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 5%;
+	}
+
+	&_item {
+		width: 270px;
+		margin: 0 5px 50px;
+		@include mq (sp) {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// スキルの画像
+	&_img {
+		position: relative;
+		width: 130px;
+		height: 130px;
+		border-radius: 100%;
+		background: linear-gradient(to bottom, $color_skillItem_top, $color_skillItem_bottom);
+		margin: 0 auto 20px;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 90;
+			transform: translate(-50%, -50%);
+			width: 50%;
+			height: 50%;
+		}
+	}
+
+	// スキルの名前
+	&_name {
+		font-family: $font_en;
+		font-size: rem(22);
+		font-weight: bold;
+		font-style: italic;
+		text-align: center;
+		margin-bottom: 15px;
+
+	}
+
+	// スキルの評細
+	&_txt {
+		padding: 0 4%;
+		text-align: justify;
+	}
+}

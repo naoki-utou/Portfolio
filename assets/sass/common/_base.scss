@@ -1,0 +1,229 @@
+/* base
+-------------------------- */
+body {
+	color: $color_base;
+	font-size: rem(14);
+	font-family: $font_base;
+	letter-spacing: .08em;
+	line-height: 1.6;
+	@include mq (xl) {
+		font-size: rem(16);
+	}
+
+	&.js_noscroll {
+		overflow: hidden;
+	}
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	letter-spacing: .1em;
+}
+
+// ---------- セクション ---------- //
+.sec {
+	margin-bottom: 70px;
+	@include mq (lg) {
+		margin-bottom: 80px;
+	}
+
+	// ---------- セクションタイトル ---------- //
+	&_ttl {
+		color: $color_base;
+		font-size: rem(40);
+		font-family: $font_en;
+		font-weight: bold;
+		font-style: italic;
+		margin-bottom: 50px;
+		@include mq (lg) {
+			font-size: rem(60);
+			margin-bottom: 80px;
+		}
+
+		&_left {
+			text-align: left;
+			margin-left: 10px;
+			&::before {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 15px;
+				margin-bottom: 6px;
+				width: 70px;
+				height: 3px;
+				background-color: $color_base;
+				@include mq (lg) {
+					width: 100px;
+					height: 5px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		&_right {
+			text-align: right;
+			margin-right: 10px;
+			&::after {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 15px;
+				margin-bottom: 6px;
+				width: 70px;
+				height: 4px;
+				background-color: $color_base;
+				@include mq (lg) {
+					width: 100px;
+					height: 5px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+// セクションインナー
+.inner {
+	padding: 0 4vw;
+	@include mq (xl) {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0;
+	}
+}
+
+// ---------- ボタン ---------- //
+.btn_area {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.link_btn {
+	display: inline-block;
+	padding: 12px 30px;
+	background-color: $color_main;
+	color: $color_white;
+	border: 2px solid $color_main;
+	border-radius: 30px;
+	transition: background .3s, color .3s;
+	@include mq (lg) {
+		padding: 7px 18px;
+	}
+	@include mq (lg) {
+		&:hover {
+			background: $color_white;
+			color: $color_main;
+			cursor: pointer;
+			transition: background .3s, color .3s;
+		}
+	}
+
+	// ボタンサイズ
+	@include mq (lg) {
+		&.middle {
+			padding: 10px 25px;
+		}
+		&.large {
+			padding: 15px 30px;
+			border-radius: 50px;
+			font-size: rem(20);
+		}
+	}
+	// 戻るボタン
+	&.back {
+		padding: 12px 30px;
+		border-radius: 50px;
+		background-color: $color_base;
+		border: 2px solid $color_base;
+		@include mq (lg) {
+			&:hover {
+				background-color: $color_white;
+				color: $color_base;
+			}
+		}
+	}
+	// ボタン英語
+	&.btn_en {
+		font-family: $font_en;
+		font-style: italic;
+		font-weight: bold;
+	}
+}
+
+// ---------- フォントアイコン ---------- //
+.twitter {
+	color: $color_twitter;
+}
+
+.github {
+	color: $color_github;
+}
+
+.mail {
+	color: $color_mail;
+}
+
+.i_size {
+	font-size: rem(30);
+	@include mq (pc) {
+		font-size: rem(36);
+	}
+}
+
+.i_layout {
+	margin: 0 10px;
+	@include mq (md) {
+		margin: 0 15px;
+	}
+}
+
+.i_white {
+	color: $color_white;
+}
+@include mq (lg) {
+	.i_cursor:hover {
+		cursor: pointer;
+		opacity: .6;
+	}
+}
+
+// ---------- profile, works, contactのページタイトル ---------- //
+.top {
+	text-align: center;
+
+	&_ttl {
+		font-family: $font_en;
+		font-size: rem(50);
+		font-weight: bold;
+		font-style: italic;
+		text-align: center;
+		padding: 70px 20px;
+		margin-bottom: 3%;
+		margin-top: 8%;
+		@include mq (md) {
+			margin-top: 6%;
+			margin-bottom: 2%;
+		}
+		@include mq (lg) {
+			margin-top: 6%;
+			font-size: rem(72);
+		}
+		@include mq (xl) {
+			margin-top: 6%;
+		}
+		> span {
+			display: block;
+			line-height: 1;
+			font-style: normal;
+			font-weight: normal;
+			font-size: rem(14);
+			@include mq (lg) {
+				font-size: rem(20);
+			}
+		}
+	}
+}

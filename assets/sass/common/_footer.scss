@@ -1,0 +1,37 @@
+/* footer
+-------------------------- */
+.footer {
+	padding: 40px;
+	@include mq () {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+
+	&_contact {
+		text-align: center;
+		margin-bottom: 40px;
+
+		// ---------- コンタクトアイコン ---------- //
+		.i_layout {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		
+		.i_size {
+			font-size: rem(40);
+			@include mq (lg) {
+				font-size: rem(44);
+			}
+		}
+	}
+
+	// ---------- コピーライト ---------- //
+	&_copyright {
+		text-align: center;
+		font-family: $font_en;
+		font-size: rem(12);
+		@include mq (lg) {
+			font-size: rem(14);
+		}
+	}
+}
